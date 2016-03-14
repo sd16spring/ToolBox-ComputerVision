@@ -1,7 +1,8 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('/home/jkunimune/ToolBox-ComputerVision/input.mp3')
 kernel = np.ones((21,21),'uint8')
 face_cascade = cv2.CascadeClassifier('/home/jkunimune/ToolBox-ComputerVision/haarcascade_frontalface_alt.xml')
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -19,7 +20,7 @@ while(True):
         cv2.line(frame, (x+2*w/3,y+h/4), (x+2*w/3,y+h/2), (0,0,0), thickness=3)
         cv2.ellipse(frame, (x+w/2,y+h/2), (w/3,h/3), 0,0,180, (0,0,0), thickness=3)
      # Display the resulting frame
-    cv2.imshow('frame',frame)
+    #cv2.imshow('frame',frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
